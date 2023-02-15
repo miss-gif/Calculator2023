@@ -2,20 +2,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-
-  // &::before,
-  // &::after {
-  //   box-sizing: inherit;
-  // }
-}
-
-body {
-  font-size: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #333;
 }
 
 input {
@@ -30,63 +16,80 @@ button {
   border: none;
   outline: none;
   background: none;
-  cursor: pointer;
   &:focus {
     outline: none;
   }
 }
 
+body {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #333;
+}
+
 .calculator {
-  background-color: #555;
+  position: relative;
+  min-width: 300px;
+  min-height: 400px;
+  background-color: #333;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0.75em;
-  width: 325px;
-  padding: 0.75em;
-  border: 1px solid #fff;
-  border-radius: 1rem;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  gap: 1rem;
+  padding: 4rem 2rem 3rem;
+  border-radius: 2rem;
+  box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25), 10px 10px 70px rgba(0, 0, 0, 0.25), inset -5px -5px 15px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .screen {
   grid-column: 1/5;
-  border-radius: 0.75rem;
+  border-radius: 1rem;
   font-size: 2rem;
   height: 6rem;
   color: #fff;
   background-color: #444;
   text-align: end;
-  padding: 0.5rem;
+  padding: 1rem;
   &::placeholder {
     color: #fff;
   }
 }
 
-.symbol,
-.number {
+button {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   aspect-ratio: 1;
-  font-size: 1.25em;
+  font-size: 2rem;
   color: #fff;
-  transition: 0.15s ease;
-  border-radius: 50%;
-}
-
-.symbol {
-  background-color: blue;
-  &:hover {
-    background-color: #fff;
+  border: 1px solid #000;
+  background: linear-gradient(180deg, #2f2f2f, #3f3f3f);
+  box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15), inset 0 -8px 8px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(0, 0, 0, 0.75),
+    10px 20px 25px rgba(0, 0, 0, 0.4);
+  user-select: none;
+  cursor: pointer;
+  border-radius: 10px;
+  // z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    bottom: 14px;
+    right: 12px;
+    background: linear-gradient(90deg, #2d2d2d, #4d4d4d);
+    border-radius: 10px;
+    box-shadow: -5px -5px 15px rgba(0, 0, 0, 0.1), 10px 5px 10px rgba(0, 0, 0, 0.15);
+    border-left: 1px solid #0004;
+    border-bottom: 1px solid #0004;
+    border-top: 1px solid #0009;
   }
 }
 
-.number {
-  background-color: #333;
-  &:hover {
-    background-color: #222;
-  }
+span {
+  position: absolute;
 }
