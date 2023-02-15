@@ -1,0 +1,90 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #333;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+input:focus {
+  outline: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+}
+
+.calculator {
+  background-color: #555;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75em;
+  width: 325px;
+  padding: 0.75em;
+  border: 1px solid #fff;
+  border-radius: 1rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.screen {
+  grid-column: 1/5;
+  border-radius: 0.75rem;
+  font-size: 2rem;
+  height: 6rem;
+  color: #fff;
+  background-color: #444;
+  text-align: end;
+  padding: 0.5rem;
+}
+.screen::-moz-placeholder {
+  color: #fff;
+}
+.screen::placeholder {
+  color: #fff;
+}
+
+.symbol,
+.number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  font-size: 1.25em;
+  color: #fff;
+  transition: 0.15s ease;
+  border-radius: 50%;
+}
+
+.symbol {
+  background-color: blue;
+}
+.symbol:hover {
+  background-color: #fff;
+}
+
+.number {
+  background-color: #333;
+}
+.number:hover {
+  background-color: #222;
+}
